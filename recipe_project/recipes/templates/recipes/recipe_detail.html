@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ recipe.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body id="bg" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/026/859/427/small/of-a-colorful-assortment-of-food-displayed-on-a-table-with-copy-space-free-photo.jpg');background-repeat: no-repeat; background-size:1400px 700px">
+    <h1>{{ recipe.name }}</h1>
+    <h3>Instructions:</h3>
+    <p>{{ recipe.instructions }}</p>
+
+    <form method="get">
+        <label for="servings">Servings:</label>
+        <input type="number" id="servings" name="servings" value="{{ servings }}" min="1">
+        <button type="submit">Update</button>
+    </form>
+
+    <h3>Ingredients:</h3>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient.quantity }} {{ ingredient.unit }} of {{ ingredient.name }}</li>
+        {% empty %}
+            <li>No ingredients available.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'recipe_list' %}">Back to Recipes</a>
+    <h1><center><b> Thank You! </b></center></h1>
+</body>
+</html>

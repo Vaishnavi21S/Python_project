@@ -1,0 +1,24 @@
+
+{% load static %}
+
+{% block title %}
+    <title>Python Django</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <body id="bg" style="background-image: url('https://t4.ftcdn.net/jpg/04/17/20/69/360_F_417206990_H8dkSRvxG9e6ykpNTeo1ti7Nui33I5bQ.jpg');background-repeat: no-repeat; background-size:1500px 650px">
+        <h1><center><b> Food Recipe Count </b></center></h1>
+        <h3><center>List Of Recipes: <a href="{% url 'recipe_list' %}">View Recipes</a></center></h3>
+        <h4 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:white">Food description refers to the way food is characterized based on its appearance, flavor, texture, aroma, and nutritional content. It helps to convey what a dish looks, smells, tastes, and feels like when eaten. This can include details such as:
+            <div style="text-align: center; color: white;">
+                <li>Appearance: Color, shape, presentation, and garnishing.</li>
+                <li>Flavor: The taste profile—sweet, salty, sour, bitter, umami, spicy, etc.</li>
+                <li>Texture: How it feels in the mouth—crispy, crunchy, creamy, chewy, tender, etc.</li>
+                <li>Aroma: The scent or fragrance that adds to the overall experience.</li>
+                <li>Ingredients: Key components that define the dish.</li>
+                <li>Cultural or Regional Context: Describes the origin or traditional way of serving the food.</li>
+            </div>
+        </h4>
+    </body>
+{% endblock %}
